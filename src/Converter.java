@@ -7,11 +7,11 @@ import org.apache.commons.codec.binary.Hex;
 public class Converter {
     public static String hex_to_base64(String input)
     {
-        byte[] output;
+        byte[] buffer;
 
         try
         {
-            output = Base64.encodeBase64(Hex.decodeHex(input));
+            buffer = Base64.encodeBase64(Hex.decodeHex(input));
         }
         catch(Exception e)
         {
@@ -19,6 +19,6 @@ public class Converter {
             return null;
         }
 
-        return output.toString();
+        return new String(buffer);
     }
 }
